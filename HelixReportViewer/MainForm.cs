@@ -38,6 +38,8 @@ namespace HelixReportViewer
 
                 if (authenticateUser(textBoxDatabase.Text.Trim(), textBoxUserName.Text.Trim(), textBoxPassword.Text.Trim()))
                 {
+                    treeViewReports.Nodes.Clear();
+
                     Query = "SELECT CG.GROUP_ID, GROUP_NAME, CM.REPORT_ID, REPORT_NAME, REPORT_PATH " +
                             " FROM  CR_REPORTS CR " +
                             " INNER JOIN CR_MENU CM ON CR.REPORT_ID = CM.REPORT_ID " +
